@@ -1,0 +1,12 @@
+services:
+  - type: background
+    name: dentist-bot
+    env: python
+    framework: ""
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: {{ YOUR_TELEGRAM_BOT_TOKEN }}
