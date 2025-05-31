@@ -1,22 +1,7 @@
-import os
 import sqlite3
 from openpyxl import Workbook
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
-
-# --- Загрузка переменных окружения ---
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    logger.warning("Файл .env не будет загружен — библиотека python-dotenv не установлена")
-
-# --- Конфигурация ---
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_STOMBOT_TOKEN")
-
-if not all([TELEGRAM_TOKEN]):
-    logger.error("Переменная окружения задана!")
-    exit(1)
 
 # Этапы диалога
 NAME, DATE, SERVICE, COST, PAID, EXPORT = range(6)
