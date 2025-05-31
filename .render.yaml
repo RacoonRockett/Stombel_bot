@@ -6,7 +6,7 @@ services:
     region: frankfurt
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python bot.py
+    startCommand: python dentist_bot.py
     envVars:
-      - key: TELEGRAM_BOT_TOKEN
+      - key: STOMBOT_TOKEN
         value: {{ YOUR_TELEGRAM_BOT_TOKEN }}
