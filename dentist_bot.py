@@ -2,7 +2,6 @@ import sqlite3
 from openpyxl import Workbook
 from telegram import Update, ReplyKeyboardMarkup, KeyboardButton
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
-from dotenv import load_dotenv
 import os
 import logging
 
@@ -11,8 +10,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # --- Загрузка токена ---
-load_dotenv()  # Только для локальной разработки
-
 TELEGRAM_TOKEN = os.getenv("STOMBOT_TOKEN")
 
 if TELEGRAM_TOKEN is None:
